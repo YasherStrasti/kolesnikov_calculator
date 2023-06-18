@@ -20,7 +20,7 @@ public class Main {
         String strResult = "";
 
         int error;
-        int result = 0;
+        int result;
 
         if ((error = stringCheckCorrect(splitedString)) != 0) {
             printException(error);
@@ -172,22 +172,16 @@ public class Main {
 
     static void printException(int number) throws ScannerException {
         switch (number) {
-            case 1 -> {
-                throw new ScannerException("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
-            }
-            case 2 -> {
+            case 1 -> throw new ScannerException("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
 
-                throw new ScannerException("Используйте оператор (+, -, /, *)");
-            }
-            case 3 -> {
-                throw new ScannerException("Используются одновременно разные системы счисления");
-            }
-            case 4 -> {
-                throw new ScannerException("Неверный ввод");
-            }
-            case 5 -> {
-                throw new ScannerException("Римские цифры не могут быть отрицательными");
-            }
+            case 2 -> throw new ScannerException("Используйте оператор (+, -, /, *)");
+
+            case 3 -> throw new ScannerException("Используются одновременно разные системы счисления");
+
+            case 4 -> throw new ScannerException("Неверный ввод");
+
+            case 5 -> throw new ScannerException("Римские цифры не могут быть отрицательными");
+
         }
     }
 }
